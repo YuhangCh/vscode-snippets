@@ -266,7 +266,14 @@
   "Pretty Print": {
     "prefix": "pp",
     "body": [
-      "pretty.Print($0)",
+      "pretty.Print($0)"
+    ]
+  },
+
+  "fmt.Println": {
+    "prefix": "pl",
+    "body": [
+      "fmt.Println($0)"
     ]
   },
 
