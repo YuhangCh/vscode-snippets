@@ -117,7 +117,7 @@
   },
 
   "Empty Struct": {
-    "prefix": "es",
+    "prefix": "struct",
     "body": [
       "struct{}{}"
     ]
@@ -131,7 +131,7 @@
   },
 
   "Slice Remove": {
-    "prefix": "sr",
+    "prefix": "remove",
     "body": [
       "${1:slice} = append(${1:slice}[:${2:index}], ${1:slice}[${2:index}+1:]...)"
     ]
@@ -200,7 +200,7 @@
   },
 
   "if": {
-    "prefix": "if",
+    "prefix": "ifok",
     "body": [
       "if ${1:v}, ok := $2; ok {",
       "  $0",
@@ -344,7 +344,7 @@
   },
 
   "Float64": {
-    "prefix": "fl",
+    "prefix": "f6",
     "body": [
       "float64($0)"
     ]
@@ -378,14 +378,14 @@
   },
 
   "Sprintf": {
-    "prefix": "ss",
+    "prefix": "sp",
     "body": [
       "fmt.Sprintf(\"$1\", $0)"
     ]
   },
 
   "If Error": {
-    "prefix": "e",
+    "prefix": "ife",
     "body": [
       "if err != nil {",
       "  $0",
@@ -394,7 +394,7 @@
   },
 
   "errors.Is()": {
-    "prefix": "is",
+    "prefix": "erris",
     "body": [
       "if errors.Is(err, ${1:io.ErrUnexpectedEOF}) {",
       "  $0",
@@ -429,14 +429,14 @@
   },
 
   "Return": {
-    "prefix": "r",
+    "prefix": "rt",
     "body": [
       "return "
     ]
   },
 
   "Return Error": {
-    "prefix": "re",
+    "prefix": "rte",
     "body": [
       "return fmt.Errorf(\"$1: %w\", err)"
     ]
@@ -581,7 +581,7 @@
   },
 
   "Function Anonymous": {
-    "prefix": "ff",
+    "prefix": "af",
     "body": [
       "func($1) $2 {",
       "  $0",
@@ -663,7 +663,7 @@
   },
 
   "For Range": {
-    "prefix": "fr",
+    "prefix": "forv",
     "body": [
       "for _, ${1:v} := range ${2:value} {",
       "  $0",
@@ -672,7 +672,7 @@
   },
 
   "For Range Chan": {
-    "prefix": "frr",
+    "prefix": "fork",
     "body": [
       "for ${1:v} := range ${2:value} {",
       "  $0",
